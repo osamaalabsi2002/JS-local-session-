@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .item {
+        color: black;
+        text-align: center;
+        justify-content: center;
+        padding: 25px;
+        font-size: xx-large;
+        background-color: rgb(214, 214, 212);
+        border: 0px solid #000000;
+        margin: 5px;
+        width: auto;
+        height: 50px;
+        min-width: 50px;
+        box-shadow: 0px 4px 3px rgb(86, 100, 114);
+        cursor: pointer;
+        display: grid;
+      }
+      .item:hover {
+        background-color: #ba5959;
+      }
+
+      .grid {
+        position: absolute;
+        background-color: rgb(153, 219, 241);
+        justify-content: center;
+        display: grid;
+        grid-template-columns: auto auto auto auto auto;
+        grid-template-rows: auto auto auto auto auto;
+        width: auto;
+        height: auto;
+      }
+    </style>
+  </head>
+
+  <script>
+    function clicktodisplay(input) {
+      var display = document.getElementById("display");
+      var inputField = document.getElementById("inputField");
+      if (input === "c") {
+        inputField.value = "";
+      } else if (input === "=") {
+        try {
+          inputField.value = eval(inputField.value);
+        } catch (error) {
+          inputField.value = "Error";
+        }
+      } else {
+        inputField.value += input;
+      }
+    }
+  </script>
+
+  <body
+    style="
+      position: absolute;
+      background-color: rgb(245, 234, 218);
+      top: 10%;
+      right: 50%;
+      display: grid;
+    "
+  >
+    <h1>Grid</h1>
+    <div id="display" class="grid">
+      <input
+        id="inputField"
+        class="item"
+        style="
+          background-color: rgb(222, 233, 237);
+          grid-row-start: 1;
+          grid-column-start: span;
+          grid-column-end: span 5;
+        "
+        readonly
+      />
+    </div>
+
+    <div
+      onclick="clicktodisplay('1')"
+      class="item"
+      style="grid-column-start: 1; grid-row-start: 2; text-align: center"
+    >
+      1
+    </div>
+    <div
+      onclick="clicktodisplay('2')"
+      class="item"
+      style="grid-column-start: 2; grid-row-start: 2"
+    >
+      2
+    </div>
+    <div
+      onclick="clicktodisplay('3')"
+      class="item"
+      style="grid-column-start: 3; grid-row-start: 2"
+    >
+      3
+    </div>
+    <div
+      onclick="clicktodisplay('4')"
+      class="item"
+      style="grid-column-start: 1; grid-row-start: 3"
+    >
+      4
+    </div>
+    <div
+      onclick="clicktodisplay('5')"
+      class="item"
+      style="grid-column-start: 2; grid-row-start: 3"
+    >
+      5
+    </div>
+    <div
+      onclick="clicktodisplay('6')"
+      class="item"
+      style="grid-column-start: 3; grid-row-start: 3"
+    >
+      6
+    </div>
+    <div
+      onclick="clicktodisplay('7')"
+      class="item"
+      style="grid-column-start: 1; grid-row-start: 4"
+    >
+      7
+    </div>
+    <div
+      onclick="clicktodisplay('8')"
+      class="item"
+      style="grid-column-start: 2; grid-row-start: 4"
+    >
+      8
+    </div>
+    <div
+      onclick="clicktodisplay('9')"
+      class="item"
+      style="grid-column-start: 3; grid-row-start: 4"
+    >
+      9
+    </div>
+    <div
+      onclick="clicktodisplay('0')"
+      class="item"
+      style="grid-column-start: 2; grid-row-start: 5"
+    >
+      0
+    </div>
+    <div
+      onclick="clicktodisplay('+')"
+      class="item"
+      style="
+        background-color: rgb(255, 255, 0);
+        grid-column-start: 4;
+        grid-row-start: 2;
+      "
+    >
+      +
+    </div>
+    <div
+      onclick="clicktodisplay('-')"
+      class="item"
+      style="
+        background-color: rgb(255, 255, 0);
+        grid-column-start: 4;
+        grid-row-start: 3;
+      "
+    >
+      -
+    </div>
+    <div
+      onclick="clicktodisplay('*')"
+      class="item"
+      style="
+        background-color: rgb(255, 255, 0);
+        grid-column-start: 4;
+        grid-row-start: 4;
+      "
+    >
+      *
+    </div>
+    <div
+      onclick="clicktodisplay('/')"
+      class="item"
+      style="
+        background-color: rgb(255, 255, 0);
+        grid-column-start: 4;
+        grid-row-start: 5;
+      "
+    >
+      /
+    </div>
+    <div
+      onclick="clicktodisplay('c')"
+      class="item"
+      style="background-color: #ba5959; grid-column-start: 1; grid-row-start: 5"
+    >
+      c
+    </div>
+    <div
+      onclick="clicktodisplay('=')"
+      class="item"
+      style="grid-column-start: 3; grid-row-start: 5"
+    >
+      =
+    </div>
+  </body>
+</html>

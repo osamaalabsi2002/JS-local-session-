@@ -1,0 +1,41 @@
+<html>
+  <head> </head>
+
+  <style>
+    body {
+      width: 100%;
+      height: 100%;
+      background-color: rgb(74, 74, 74);
+      color: rgb(40, 67, 40);
+    }
+    h1 {
+      color: black;
+    }
+  </style>
+
+  <body>
+    <h1 id="text">hello osama change the color text</h1>
+
+    <select id="select" onchange="change()">
+      <option>select color you need</option>
+      <option value="blue">blue</option>
+      <option value="black">black</option>
+      <option value="white">white</option>
+    </select>
+
+    <script>
+      function change() {
+        var select = document.getElementById("select").value;
+        var body = document.body;
+
+        body.style.backgroundColor = select;
+        var text = document.querySelector("h1");
+        if (select == "black") {
+          text.style.color = "white";
+        } else if (select == "white") {
+          text.style.color = "red";
+        } else text.style.color = "orange";
+      }
+    </script>
+  </body>
+</html>
